@@ -57,7 +57,11 @@ if(!empty($_POST['nom']) && (!empty($_POST['prenom'])) && (!empty($_POST['datena
 
     //Etape 8: On vérifie si la requete a bien été exécuté/recue au niveau du serveur mysql
     if($result){
-        echo "Vous avez bien été enregistré au numéro :".$idcom->insert_id;
+        //echo "Vous avez bien été enregistré au numéro :".$idcom->insert_id;
+
+        echo "<script language=\"javascript\">";
+        echo "alert('Vous avez bien été enregistré au numéro :.$idcom->insert_id' )";
+        echo"</script>";
     }
     else { echo "Erreur ".$idcom->error;}
 
@@ -65,7 +69,6 @@ if(!empty($_POST['nom']) && (!empty($_POST['prenom'])) && (!empty($_POST['datena
     $idcom->close();
 }
 else {echo "Veuillez remplir la formulaire"; }
-
 
 ?>
 
